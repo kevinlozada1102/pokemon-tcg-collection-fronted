@@ -1,0 +1,24 @@
+<div class="card-container">
+  <div *ngFor="let carta of cartas" style="width: 200px; padding: 1em">
+    <div style="display: flex; flex-direction: column;">
+      <div  style="display: flex; flex-direction: row">
+        <div class="texto-card">
+          <span>{{ carta.numero }}</span>
+        </div>
+        <div  style="display: flex; flex-direction: row">
+          <div *ngFor="let cartaVariedad of carta.cartaVariedades">
+            <mat-checkbox [color]="cartaVariedad.variedad.color"
+                          [(ngModel)]="cartaVariedad.encontrada"
+                          (change)="actualizarCartaVariedad(cartaVariedad)"></mat-checkbox>
+          </div>
+        </div>
+        <div class="texto-card">
+          <span>{{ carta.nombre }}</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img mat-card-image [src]="carta.imagen.rutapath" alt="Photo of a Shiba Inu" width="200px">
+      </div>
+    </div>
+  </div>
+</div>
