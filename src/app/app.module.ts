@@ -10,6 +10,12 @@ import {SweetAlertService} from "./services/SweetAlertService/sweet.alert.servic
 import {NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, SPINNER} from "ngx-ui-loader";
 import {LoaderInterceptor} from "./interceptors/loader.interceptor";
 import {SeriesComponent} from "./components/series/series.component";
+import {MatCardModule} from "@angular/material/card";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {ExpansionComponent} from "./components/expansion/expansion.component";
+import {CartasComponent} from "./components/cartas/cartas.component";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -42,7 +48,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 };
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SeriesComponent,
+    ExpansionComponent,
+    CartasComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    SeriesComponent
+    MatCardModule,
+    MatCheckboxModule,
+    MatProgressBarModule
   ],
   providers: [
     {
@@ -61,6 +72,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       multi: true
     },
     SweetAlertService,
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
