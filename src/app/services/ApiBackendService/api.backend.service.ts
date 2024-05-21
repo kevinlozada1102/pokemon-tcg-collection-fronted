@@ -33,4 +33,22 @@ export class ApiBackendService {
     return this.http.get<any>(environment.apiUrl +`api/carta/obtenerPorExpansion/`+ expansionId, { headers: headers });
   }
 
+  obtenerImagenPorRuta(rutaImagen: string): Observable<any> {
+    const params = new HttpParams()
+      .set('ruta', rutaImagen);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.get<any>(environment.apiUrl +`api/archivo/obteneArhivoPorRuta`, { params: params, headers: headers,  responseType: 'blob' as 'json' });
+  }
+
+  actualizarCartaVariedad(bodyCartaVariedad: any): Observable<any> {
+
+    const body = bodyCartaVariedad;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put<any>(environment.apiUrl +`api/carta/actualizar-carta-variedad`, body, { headers: headers });
+  }
+
 }
