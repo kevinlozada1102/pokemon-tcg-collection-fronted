@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div *ngFor="let expansion of expansiones" style="width: 300px; height: 200px; padding: 1em">
+    <mat-card (click)="onExpansionClick(expansion)" style="cursor: pointer; background-color: #ebebeb94">
+      <div style="display: flex; justify-content: space-between">
+        <div>
+          <p>{{ expansion.nombre + ' (' + expansion.cartasTotales + ')' }}</p>
+        </div>
+        <div>
+          <img mat-card-image [src]="expansion.imagen.rutapath" alt="Photo of a Shiba Inu" width="40px">
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <div style="width: 200px; height: 130px; position: relative; overflow: hidden;">
+          <img mat-card-image [src]="expansion.logo.rutapath" alt="Photo of a Shiba Inu" class="imagen">
+        </div>
+      </div>
+      <mat-progress-bar mode="determinate" [value]="expansion.cartasObtenidas / expansion.cartasTotales * 100"></mat-progress-bar>
+    </mat-card>
+  </div>
+</div>
+
