@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-wrapper {
+  flex-basis: calc(33.33% - 20px); /* Tamaño deseado de cada tarjeta (33.33% para 3 tarjetas por fila) */
+  margin-bottom: 20px; /* Espacio entre filas */
+}
+
+.card-wrapper2 {
+  flex-basis: calc(16.66% - 20px); /* Tamaño deseado de cada tarjeta (33.33% para 3 tarjetas por fila) */
+  margin-bottom: 20px; /* Espacio entre filas */
+}
+
+.custom-checkbox .mat-checkbox-frame {
+  border-color: #00f; /* Azul */
+  border-width: 2px; /* Ancho del borde */
+}
+
+.custom-checkbox.mat-accent .mat-checkbox-frame {
+  border-color: #0f0; /* Verde */
+}
+
+.imagen {
+  width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción de la imagen */
+  display: block; /* Asegura que la imagen se muestre como un bloque */
+  position: absolute; /* Posiciona la imagen relativa al contenedor */
+  top: 0; /* Coloca la imagen en la parte superior del contenedor */
+  left: 0; /* Coloca la imagen en la parte izquierda del contenedor */
+}
